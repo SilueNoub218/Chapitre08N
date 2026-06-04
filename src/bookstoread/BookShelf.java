@@ -1,6 +1,7 @@
 package bookstoread;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class BookShelf {
     private final List<String> books = new ArrayList<>();
@@ -14,8 +15,6 @@ public class BookShelf {
     }
 
     public List<String> arrange() {
-        List<String> sortedBooks = new ArrayList<>(books);
-        sortedBooks.sort(Comparator.naturalOrder());
-        return sortedBooks;
+        return books.stream().sorted().collect(Collectors.toList());
     }
 }
