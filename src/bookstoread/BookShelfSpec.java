@@ -15,7 +15,7 @@ import org.junit.jupiter.api.Test;
 public class BookShelfSpec {
     private BookShelf shelf;
 
-    // Extraction des livres utilisés dans les tests
+
     private Book effectiveJava;
     private Book codeComplete;
     private Book mythicalManMonth;
@@ -24,7 +24,7 @@ public class BookShelfSpec {
     void init() throws Exception {
         shelf = new BookShelf();
 
-        // Initialisation des livres selon la consigne
+
         effectiveJava = new Book("Effective Java", "Joshua Bloch",
                 LocalDate.of(2008, Month.MAY, 8));
         codeComplete = new Book("Code Complete", "Steve McConnel",
@@ -69,7 +69,7 @@ public class BookShelfSpec {
     void bookshelfArrangedByBookTitle() {
         shelf.add(effectiveJava, codeComplete, mythicalManMonth);
         List<Book> books = shelf.arrange();
-        // L'ordre attendu dépend de l'implémentation de Comparable dans Book (ici l'ordre alphabétique des titres)
+
         assertEquals(Arrays.asList(codeComplete, effectiveJava, mythicalManMonth), books,
                 () -> "Books in a bookshelf should be arranged lexicographically by book title");
     }
